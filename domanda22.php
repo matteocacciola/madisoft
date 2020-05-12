@@ -2,20 +2,25 @@
 
 class App
 {
+    private $pf;
+
+    public function __construct()
+    {
+        $this->pf = new PlayerFormatter();
+    }
+
     function formatSoccerPlayer()
     {
         $sp = new SoccerPlayer();
-        $spf = new PlayerFormatter();
 
-        $spf->format($sp);
+        $this->pf->format($sp);
     }
 
     function formatBasketPlayer()
     {
         $bp = new BasketPlayer();
-        $bpf = new PlayerFormatter();
 
-        $bpf->format($bp);
+        $this->pf->format($bp);
     }
 }
 
